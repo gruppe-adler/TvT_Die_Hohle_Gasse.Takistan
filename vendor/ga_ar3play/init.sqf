@@ -1,5 +1,11 @@
+_isStreamable = _this select 0; // boolean
+_getEnableReplay = _this select 1; // optional, function that returns boolean
 
-getPlayerArray = {
+if (isNull _getEnableReplay) then {
+	_getEnableReplay = { true };
+};
+
+_getPlayerArray = {
 	private ['_x', '_name', '_status', '_vehicletype', '_classtype'];
 	_x = _this select 0;
 
@@ -100,7 +106,7 @@ getPlayerArray = {
 	];
 };
 
-diag_log "export-missiondata.sqf: start";
+diag_log "ga_ar3play: start";
 
 _logscript = compile preprocessFileLineNumbers "vendor\sock-rpc\log.sqf";
 call _logscript;
@@ -114,31 +120,31 @@ diag_log "export-missiondatat.sqf: ok. start pinging sock_rpc...";
 
 if (isDedicated) then {
 
-	deadPlayerNames = [];
+	_deadPlayerNames = [];
 
 	waitUntil { count allUnits > 0 };
 
 	['missionStart', [missionName, worldName]] call sock_rpc;
 
-	if (IS_STREAMABLE) then {
+	if (_isStreamable) then {
 		['setIsStreamable', [true]] call sock_rpc;
 	};
 
 	[] spawn {
-		while {(count allUnits > 0) and (ENABLE_REPLAY)} do {
-			playersArray = [];
+		while {(count allUnits > 0) and (call _getEnableReplay)} do {
+			_playersArray = [];
 			{
-				playerArray = [_x] call getPlayerArray;
+				playerArray = [_x] call _getPlayerArray;
 
-				if ((deadPlayerNames find (playerArray select 0)) == -1) then {
-					playersArray = playersArray + [playerArray];
+				if ((_deadPlayerNames find (playerArray select 0)) == -1) then {
+					_playersArray = _playersArray + [playerArray];
 				};
 				if (((playerArray select 3) select 0) == 'dead') then {
-					deadPlayerNames = deadPlayerNames + [(playerArray select 0)];
+					_deadPlayerNames = _deadPlayerNames + [(playerArray select 0)];
 				};
 			} forEach allUnits + allDead - vehicles - agents;
 
-			['setAllPlayerData', [playersArray]] call sock_rpc;
+			['setAllPlayerData', [_playersArray]] call sock_rpc;
 			sleep 2;
 		};
 
