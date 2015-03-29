@@ -191,7 +191,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="einName";
-					description="eineBeschreibung";
+					description="Taliban-Sympathisant";
 				};
 				class Item1
 				{
@@ -204,7 +204,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="zweiName";
-					description="zweiBeschreibung";
+					description="Taliban-Sympathisant";
 				};
 			};
 		};
