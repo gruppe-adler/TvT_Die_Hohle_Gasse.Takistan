@@ -33,7 +33,7 @@ if (isServer) then {
 	opfor_rpg_crate addWeaponCargoGlobal [];
 };
 
-if ((!isServer) && ((side player) == "EAST")) then {
+if ((!isServer) && ((side player) == west)) then {
 	["AmmoboxInit", [blufor_crate, true, {true}]] spawn BIS_fnc_arsenal;
 
 	blufor_crate addAction ["Ausrüstung", {
