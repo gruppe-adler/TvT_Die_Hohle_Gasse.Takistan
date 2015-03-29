@@ -6,25 +6,10 @@ enableSentences false;
 if !(isDedicated) then {
 	["Preload"] call BIS_fnc_arsenal;
 };
-if !(isDedicated) then {	
-	titleCut ["", "BLACK FADED", 999];
-	[] Spawn {
-		titleText ["","PLAIN"];
-		titleFadeOut 1;
-		sleep 2;
 
-		titleCut ["", "BLACK IN", 1];
+[''] execVM "vendor\ga_common\intro.sqf";
 
-		waitUntil {time > 3};
-		
-		[
-			"<img size= '6' shadow='false' image='pic\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>TvT@Die Hohle Gasse</t>",
-			0, 0, 2, 2
-		] spawn BIS_fnc_dynamicText;
-	};
-};
-
-if (isServer and ENABLE_REPLAY) then {
+if (isServer && ENABLE_REPLAY && !(isNil "sock_rpc")) then {
 	execVM "export-missiondata.sqf";
 };
 
