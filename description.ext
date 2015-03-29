@@ -1,0 +1,31 @@
+OnLoadMission = "TvT_Die_Hohle_Gasse";
+author="Fusselwurm für Gruppe Adler"; 
+overviewText="Waffenschmuggel in Takistan"; 
+onLoadName="TvT_Die_Hohle_Gasse";
+overviewPicture="";
+onLoadMissionTime = True;
+respawn= "BIRD";
+respawnDelay = 3;
+disabledAI = 0;
+enableDebugConsole = 1;
+loadScreen = "pic\loading.jpg";
+
+class Params
+{
+	class EnableReplay
+	{
+		title = "enable replay";
+		values[] = {false, true};
+		texts[] = {"no", "yes"};
+		default = true;
+		isGlobal = 0;
+	};
+	class IsStreamable
+	{
+		title = "enable live stream (needs 'enable replay')";
+		values[] = {false, true};
+		texts[] = {"no","yes"};
+		default = 0;
+		isGlobal = 0;
+	};
+};
