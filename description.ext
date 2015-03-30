@@ -4,11 +4,13 @@ overviewText="Waffenschmuggel in Takistan";
 onLoadName="TvT_Die_Hohle_Gasse";
 overviewPicture="";
 onLoadMissionTime = True;
-respawn= "BIRD";
-respawnDelay = 3;
 disabledAI = 0;
 enableDebugConsole = 1;
 loadScreen = "pic\loading.jpg";
+
+respawnDelay = 9999999; // 9999999 or greater = No Respawn
+//Changes respawn, respawnDialog and respawnTemplates parameters.
+#include "CSSA3\CSSA3_header.hpp"
 
 class Params
 {

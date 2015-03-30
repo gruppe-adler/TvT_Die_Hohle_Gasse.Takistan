@@ -4,7 +4,7 @@ player createDiaryRecord [
 		"Regeln für OPFOR",
 		"
 			OPFOR darf die RPG-Launcher nur über die kürzeste Straßenverbindung zwischen Khushab und Feruz-Abad transportieren.<br/>
-			OPFOR darf *nicht* die rot schraffierten Gebiete betreten.
+			OPFOR sollte *nicht* die rot schraffierten Gebiete betreten. Akute Minengefahr!
 		"
 	]
 ];
@@ -19,6 +19,7 @@ player createDiaryRecord [
 			* Personen, die sich einer Durchsuchung gezielt entziehen (sprich: bei wiederholtem Anruf nicht stehenbleiben), dürfen gezielt kampfunfähig gemacht werden. <br/>
 			* Selbstverteidigung (wer sich mit überhöhter Geschwindigkeit einem Checkpoint nähert... ihr wißt schon) <br/>
 			* Bewaffnete dürfen getötet werden
+			* Personen dürfen nicht grundlos dauerhaft festgehalten werden
 		"
 	]
 ];
@@ -28,7 +29,7 @@ player createDiaryRecord [
 	[
 		"Siegbedingungen",
 		"
-			OPFOR gewinnt, wenn mindestens 5 RPG-Launcher an der Moschee in Feruz-Abad deponiert worden sind.  <br/>
+			OPFOR gewinnt, wenn mindestens 5 RPG-Launcher in der Kiste in der Moschee in Feruz-Abad deponiert worden sind.  <br/>
 			OPFOR gewinnt ebenfalls, wenn das ranghöchste BLUFOR-Element tot ist.  <br/>
 			 <br/>
 			BLUFOR gewinnt, wenn eine Stunde vergangen ist.
