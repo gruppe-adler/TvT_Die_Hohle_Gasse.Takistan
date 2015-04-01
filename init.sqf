@@ -43,7 +43,7 @@ if ((!isServer) && ((side player) == west)) then {
 
 
 // countdown
-END_TIME = 60; //When mission should end in seconds.
+END_TIME = 3600; //When mission should end in seconds.
 
 if (isServer) then {
     [] spawn 
